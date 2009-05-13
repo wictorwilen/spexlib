@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GeneralExtensions\DateTimeExtensions.cs" />
+    <Compile Include="GeneralExtensions\XmlNodeExtensions.cs" />
     <Compile Include="SPExtensions\SPListExtensions.cs" />
     <Compile Include="SPExtensions\SPListItemCollectionExtensions.cs" />
     <Compile Include="SPExtensions\SPListItemExtension.cs" />
