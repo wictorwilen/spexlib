@@ -54,6 +54,9 @@ namespace SPExLib.Extensions {
         public static bool Contains(this SPListItem item, string fieldName) {
             return item.Fields.ContainsField(fieldName);
         }
+
+
+
     }
 
 }

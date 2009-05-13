@@ -13,15 +13,15 @@
  * http://www.opensource.org/licenses/ms-pl.html
  * 
  */
- 
 using System;
 using System.Linq;
 using Microsoft.SharePoint;
 
 namespace SPExLib.Extensions {
-    public static class SPWebExtensions {
-        public static bool ListExists(this SPWeb web, string name) {
-            return web.Lists.Cast<SPList>().Any(list => string.Compare(list.Title, name, true) == 0);
+    public static class SPListExtensions {
+        public static bool ViewExists(this SPList list, string title) {
+            return list.Views.Cast<SPView>().Any(view => string.Compare(view.Title, title, true) == 0);
         }
+
     }
 }
