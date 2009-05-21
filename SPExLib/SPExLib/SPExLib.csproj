@@ -61,7 +61,10 @@
     <Compile Include="SPExtensions\SPListExtensions.cs" />
     <Compile Include="SPExtensions\SPListItemCollectionExtensions.cs" />
     <Compile Include="SPExtensions\SPListItemExtension.cs" />
+    <Compile Include="SPExtensions\SPUserCollectionExtensions.cs" />
     <Compile Include="SPExtensions\SPUserExtension.cs" />
+    <Compile Include="SPExtensions\SPViewExtensions.cs" />
+    <Compile Include="SPExtensions\SPWebCollectionExtensions.cs" />
     <Compile Include="SPExtensions\SPWebExtensions.cs" />
     <Compile Include="GeneralExtensions\StringExtensions.cs" />
     <Compile Include="GeneralExtensions\XElementExtensions.cs" />

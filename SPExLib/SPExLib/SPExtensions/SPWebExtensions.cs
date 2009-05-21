@@ -21,7 +21,7 @@ using Microsoft.SharePoint;
 namespace SPExLib.Extensions {
     public static class SPWebExtensions {
         public static bool ListExists(this SPWeb web, string name) {
-            return web.Lists.Cast<SPList>().Any(list => string.Compare(list.Title, name, true) == 0);
+            return web.Lists.Cast<SPList>().Any(list => string.Compare(list.Title, name, true) == 0);            
         }
     }
 }
