@@ -15,19 +15,11 @@
  */
 using System;
 using System.Linq;
-using System.Collections.Generic;
 using Microsoft.SharePoint;
-using SPExLib.Extensions;
 
 namespace SPExLib.Extensions {
-    public static class SPListExtensions {
-        public static bool ViewExists(this SPList list, string title) {
-            return list.Views.Cast<SPView>().Any(view => string.Compare(view.Title, title, true) == 0);
-        }
-
-        public static void ForEach(this SPList source, Action<SPListItem> action) {
-            source.Items.ForEach(action);
-        }
+    public static class SPViewExtensions {
+     
 
     }
 }
