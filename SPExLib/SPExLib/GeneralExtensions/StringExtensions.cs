@@ -25,7 +25,7 @@ namespace SPExLib.Extensions {
         static Regex dashes = new Regex(@"^[-]|[-]+$");
 
 
-        public static string Formatx(this string format, params object[] args) {
+        public static string FormatWith(this string format, params object[] args) {
             return string.Format(format, (object[])args);
         }
 

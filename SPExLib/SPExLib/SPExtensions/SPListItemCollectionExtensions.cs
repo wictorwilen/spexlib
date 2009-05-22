@@ -82,6 +82,15 @@ namespace SPExLib.Extensions {
                 yield return result;
             }            
         }
+
+        public static IEnumerable<SPListItem> Where(this SPListItemCollection source, Func<SPListItem, bool> predicate) {
+            foreach (SPListItem item in source) {
+                if (predicate(item)) {
+                    yield return item;
+                }
+
+            }
+        }
         
         
     }
