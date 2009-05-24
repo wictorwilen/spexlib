@@ -1,5 +1,5 @@
 ﻿/*
- * SharePoint Extensions Library
+ * SharePoint Extensions Library (Server)
  * ------------------------------------------
  * http://SPExLib.codeplex.com/
  * ------------------------------------------
@@ -7,7 +7,7 @@
  * http://www.opensource.org/licenses/ms-pl.html
  * 
  */
- 
+
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -15,11 +15,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SharePoint Extensions Library")]
+[assembly: AssemblyTitle("SharePoint Extensions Library for Server")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SPExLib")]
+[assembly: AssemblyProduct("SPExLib.Server")]
 [assembly: AssemblyCopyright("Copyright ©  2009")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -30,7 +30,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("3e4062a3-a913-4a07-9f76-3831b9718666")]
+[assembly: Guid("f502ce7c-2000-4ecd-9100-87897eafd860")]
 
 // Version information for an assembly consists of the following four values:
 //

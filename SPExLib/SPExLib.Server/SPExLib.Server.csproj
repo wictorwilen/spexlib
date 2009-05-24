@@ -5,19 +5,17 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1970A093-0275-4300-9406-028650C7AAA1}</ProjectGuid>
+    <ProjectGuid>{D25ACC3F-6127-4A42-A5B5-7A49474DC460}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SPExLib</RootNamespace>
-    <AssemblyName>SPExLib</AssemblyName>
+    <RootNamespace>SPExLib.Server</RootNamespace>
+    <AssemblyName>SPExLib.Server</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,7 +43,6 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -56,28 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="System\DateTimeExtensions.cs" />
-    <Compile Include="System\XmlNodeExtensions.cs" />
-    <Compile Include="SharePoint\SPListExtensions.cs" />
-    <Compile Include="SharePoint\SPListItemCollectionExtensions.cs" />
-    <Compile Include="SharePoint\SPListItemExtension.cs" />
-    <Compile Include="SharePoint\SPUserCollectionExtensions.cs" />
-    <Compile Include="SharePoint\SPUserExtension.cs" />
-    <Compile Include="SharePoint\SPViewExtensions.cs" />
-    <Compile Include="SharePoint\SPWebCollectionExtensions.cs" />
-    <Compile Include="SharePoint\SPWebExtensions.cs" />
-    <Compile Include="System\StringExtensions.cs" />
-    <Compile Include="System\XElementExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Controls\BaseEditorPart.cs" />
-    <Compile Include="Controls\BaseEditorPartCollection.cs" />
-    <Compile Include="Controls\BaseWebPart.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="key.snk" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Utilities\" />
+    <None Include="..\SPExLib\key.snk">
+      <Link>key.snk</Link>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
