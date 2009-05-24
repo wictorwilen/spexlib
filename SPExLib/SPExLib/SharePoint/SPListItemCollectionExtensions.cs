@@ -19,7 +19,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.SharePoint;
 
-namespace SPExLib.Extensions {
+namespace SPExLib.SharePoint {
     public static class SPListItemCollectionExtensions {
         public static List<SPListItem> FindByField(this SPListItemCollection input, string field, object value) {
             return (from SPListItem item in input where item[field] == value select item).ToList();

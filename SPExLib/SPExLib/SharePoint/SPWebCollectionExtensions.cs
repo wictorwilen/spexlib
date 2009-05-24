@@ -20,7 +20,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.SharePoint;
 
-namespace SPExLib.Extensions {
+namespace SPExLib.SharePoint {
     public static class SPWebCollectionExtensions {
 
 

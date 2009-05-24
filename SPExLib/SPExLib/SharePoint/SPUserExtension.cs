@@ -14,12 +14,15 @@
  * 
  */
 using System;
-using System.Linq;
 using Microsoft.SharePoint;
+using System.Linq;
 
-namespace SPExLib.Extensions {
-    public static class SPViewExtensions {
-     
+namespace SPExLib.SharePoint
+{
+    public static class SPUserExtension {
+        public static string GetFormsLoginName(this SPUser spUser)  {
+            return spUser.LoginName.Contains(':') ? spUser.LoginName.Split(':')[1] : spUser.LoginName;
 
+        }
     }
 }

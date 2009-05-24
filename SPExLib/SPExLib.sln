@@ -3,15 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPExLib", "SPExLib\SPExLib.csproj", "{1970A093-0275-4300-9406-028650C7AAA1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPExLib.Server", "SPExLib.Server\SPExLib.Server.csproj", "{D25ACC3F-6127-4A42-A5B5-7A49474DC460}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 2
+		SccNumberOfProjects = 3
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs10.codeplex.com/
 		SccLocalPath0 = .
 		SccProjectUniqueName1 = SPExLib\\SPExLib.csproj
 		SccProjectName1 = SPExLib
 		SccLocalPath1 = SPExLib
+		SccProjectUniqueName2 = SPExLib.Server\\SPExLib.Server.csproj
+		SccProjectName2 = SPExLib.Server
+		SccLocalPath2 = SPExLib.Server
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,6 +27,10 @@ Global
 		{1970A093-0275-4300-9406-028650C7AAA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1970A093-0275-4300-9406-028650C7AAA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1970A093-0275-4300-9406-028650C7AAA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D25ACC3F-6127-4A42-A5B5-7A49474DC460}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D25ACC3F-6127-4A42-A5B5-7A49474DC460}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D25ACC3F-6127-4A42-A5B5-7A49474DC460}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D25ACC3F-6127-4A42-A5B5-7A49474DC460}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

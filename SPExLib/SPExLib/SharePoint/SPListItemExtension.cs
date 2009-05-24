@@ -16,7 +16,7 @@
 using System;
 using Microsoft.SharePoint;
 
-namespace SPExLib.Extensions {
+namespace SPExLib.SharePoint {
     public static class SPListItemExtension {
         public static string GetListItemString(this SPListItem item, string column) {
             object data = item.GetListItemData(column);
