@@ -35,6 +35,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\SPExLib.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.SharePoint, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
@@ -56,6 +57,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SharePoint\Linq\SPListItemCollectionLinqExtensions.cs" />
+    <Compile Include="SharePoint\Linq\SPListLinqExtensions.cs" />
+    <Compile Include="SharePoint\Linq\SPUserCollectionLinqExtensions.cs" />
+    <Compile Include="SharePoint\Linq\SPWebCollectionLinqExtensions.cs" />
     <Compile Include="System\DateTimeExtensions.cs" />
     <Compile Include="System\XmlNodeExtensions.cs" />
     <Compile Include="SharePoint\SPListExtensions.cs" />
