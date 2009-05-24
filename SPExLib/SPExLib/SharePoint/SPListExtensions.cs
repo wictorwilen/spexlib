@@ -17,7 +17,6 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using Microsoft.SharePoint;
-using SPExLib.Extensions;
 
 namespace SPExLib.SharePoint {
     public static class SPListExtensions {
