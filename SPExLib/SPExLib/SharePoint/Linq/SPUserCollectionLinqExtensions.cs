@@ -13,27 +13,24 @@
  * http://www.opensource.org/licenses/ms-pl.html
  * 
  */
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.SharePoint;
 
-namespace SPExLib.SharePoint {
-    public static class SPUserCollectionExtensions {
+namespace SPExLib.SharePoint.Linq {
+    /// <summary>
+    /// Linq extensioins for SPUserCollection
+    /// </summary>
+    public static class SPUserCollectionLinqExtensions {
 
-
-        public static void ForEach(this SPUserCollection source, Action<SPUser> action) {
-            if (source.Count == 0) {
-                return;
-            }
+        public static IEnumerable<TResult> Select<TResult>(this SPUserCollection source, Func<SPUser, TResult> selector) {
             foreach (SPUser user in source) {
-                action(user);
+                TResult result = selector(user);
+                yield return result;
             }
         }
         
-
-   
     }
 }
