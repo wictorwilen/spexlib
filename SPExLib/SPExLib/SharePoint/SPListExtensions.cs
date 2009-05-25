@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using Microsoft.SharePoint;
+using SPExLib.SharePoint.Linq;
 
 namespace SPExLib.SharePoint {
     /// <summary>
@@ -30,8 +31,13 @@ namespace SPExLib.SharePoint {
         /// <param name="title">Title of the list (case insensitive)</param>
         /// <returns><c>True</c> if the view exists, otherwise <c>false</c></returns>
         public static bool ViewExists(this SPList list, string title) {
-            return list.Views.Cast<SPView>().Any(view => string.Compare(view.Title, title, true) == 0);
+            return list.Views.Cast<SPView>().Any(view => string.Compare(view.Title, title, StringComparison.CurrentCultureIgnoreCase) == 0);
         }
+
+        public static bool Contains(this SPWebCollection source, string name) {
+            return source.Any<SPList>(list => string.Compare(list.Title, name, StringComparison.CurrentCultureIgnoreCase) == 0);
+        }
+
 
        
     }
