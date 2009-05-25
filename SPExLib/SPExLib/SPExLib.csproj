@@ -68,6 +68,8 @@
     <Compile Include="General\DateTimeExtensions.cs" />
     <Compile Include="General\EnumerableExtensions.cs" />
     <Compile Include="General\XmlNodeExtensions.cs" />
+    <Compile Include="SharePoint\Security\SPSiteSecurityExtensions.cs" />
+    <Compile Include="SharePoint\Security\SPWebSecurityExtensions.cs" />
     <Compile Include="SharePoint\SPListExtensions.cs" />
     <Compile Include="SharePoint\SPListItemCollectionExtensions.cs" />
     <Compile Include="SharePoint\SPListItemExtension.cs" />
