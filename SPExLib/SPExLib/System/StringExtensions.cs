@@ -18,13 +18,22 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Globalization;
 
-namespace SPExLib.Extensions {
+namespace SPExLib.System {
+    /// <summary>
+    /// Extensions to the String class
+    /// </summary>
     public static class StringExtensions {
         static Regex nonstd = new Regex(@"[^a-zA-Z0-9\s]");
         static Regex whites = new Regex(@"\s+");
         static Regex dashes = new Regex(@"^[-]|[-]+$");
 
 
+        /// <summary>
+        /// Extension class that adds the static string.Format directly on the string object
+        /// </summary>
+        /// <param name="format">The string object</param>
+        /// <param name="args">Format arguments</param>
+        /// <returns>A string</returns>
         public static string FormatWith(this string format, params object[] args) {
             return string.Format(format, (object[])args);
         }
@@ -51,6 +60,20 @@ namespace SPExLib.Extensions {
             return s.ToLower();
         }
 
+        /// <summary>
+        /// Removes diacritics from a string
+        /// </summary>
+        /// <param name="s">the string</param>
+        /// <returns>A string without diacritics</returns>
+        /// <example>
+        /// <code >
+        /// "Wilén".RemoveDiacritics();
+        /// </code>
+        /// will return
+        /// <code>
+        /// "Wilen"
+        /// </code>
+        /// </example>
         public static string RemoveDiacritics(this string s) {
 
             string d = s.Normalize(NormalizationForm.FormD);
@@ -63,7 +86,6 @@ namespace SPExLib.Extensions {
 
             }
             return sb.ToString().Normalize(NormalizationForm.FormC);
-
         }
     }
 }
