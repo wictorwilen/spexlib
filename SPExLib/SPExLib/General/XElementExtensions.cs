@@ -17,7 +17,7 @@ using System;
 using System.Xml;
 using System.Xml.Linq;
 
-namespace SPExLib.Extensions {
+namespace SPExLib.General {
     public static class XElementExtensions {
       
         
