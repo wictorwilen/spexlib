@@ -15,25 +15,10 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Microsoft.SharePoint;
 
 namespace SPExLib.SharePoint {
     public static class SPUserCollectionExtensions {
 
-
-        public static void ForEach(this SPUserCollection source, Action<SPUser> action) {
-            if (source.Count == 0) {
-                return;
-            }
-            foreach (SPUser user in source) {
-                action(user);
-            }
-        }
-        
-
-   
     }
 }

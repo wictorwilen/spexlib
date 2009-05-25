@@ -59,6 +59,8 @@
   <ItemGroup>
     <Compile Include="Diagnostics\TraceExtensions.cs" />
     <Compile Include="Diagnostics\DebugExtensions.cs" />
+    <Compile Include="SharePoint\Linq\SPSiteCollectionLinqExtensions.cs" />
+    <Compile Include="SharePoint\Linq\SPBaseCollectionLinqExtensions.cs" />
     <Compile Include="SharePoint\Linq\SPListItemCollectionLinqExtensions.cs" />
     <Compile Include="SharePoint\Linq\SPListLinqExtensions.cs" />
     <Compile Include="SharePoint\Linq\SPUserCollectionLinqExtensions.cs" />
