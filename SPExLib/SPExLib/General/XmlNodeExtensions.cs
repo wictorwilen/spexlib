@@ -17,7 +17,7 @@
 using System.Xml.Linq;
 using System.Xml;
 
-namespace SPExLib.Extensions {
+namespace SPExLib.General {
     public static class XmlNodeExtensions {
         // Kudos to Eric White: http://blogs.msdn.com/ericwhite/archive/2008/12/22/convert-xelement-to-xmlnode-and-convert-xmlnode-to-xelement.aspx
         public static XElement GetXElement(this XmlNode node) {
@@ -25,7 +25,6 @@ namespace SPExLib.Extensions {
             using (XmlWriter xmlWriter = xDoc.CreateWriter())
                 node.WriteTo(xmlWriter);
             return xDoc.Root;
-
         }
     }
 }

@@ -16,7 +16,7 @@
 using System;
 using System.Globalization;
 
-namespace SPExLib.Extensions
+namespace SPExLib.General
 {
     public static class DateTimeExtensions {
 

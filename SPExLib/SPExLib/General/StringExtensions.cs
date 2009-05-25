@@ -18,7 +18,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Globalization;
 
-namespace SPExLib.System {
+namespace SPExLib.General {
     /// <summary>
     /// Extensions to the String class
     /// </summary>

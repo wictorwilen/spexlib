@@ -57,12 +57,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Diagnostics\TraceExtensions.cs" />
+    <Compile Include="Diagnostics\DebugExtensions.cs" />
     <Compile Include="SharePoint\Linq\SPListItemCollectionLinqExtensions.cs" />
     <Compile Include="SharePoint\Linq\SPListLinqExtensions.cs" />
     <Compile Include="SharePoint\Linq\SPUserCollectionLinqExtensions.cs" />
     <Compile Include="SharePoint\Linq\SPWebCollectionLinqExtensions.cs" />
-    <Compile Include="System\DateTimeExtensions.cs" />
-    <Compile Include="System\XmlNodeExtensions.cs" />
+    <Compile Include="General\DateTimeExtensions.cs" />
+    <Compile Include="General\EnumerableExtensions.cs" />
+    <Compile Include="General\XmlNodeExtensions.cs" />
     <Compile Include="SharePoint\SPListExtensions.cs" />
     <Compile Include="SharePoint\SPListItemCollectionExtensions.cs" />
     <Compile Include="SharePoint\SPListItemExtension.cs" />
@@ -71,8 +74,8 @@
     <Compile Include="SharePoint\SPViewExtensions.cs" />
     <Compile Include="SharePoint\SPWebCollectionExtensions.cs" />
     <Compile Include="SharePoint\SPWebExtensions.cs" />
-    <Compile Include="System\StringExtensions.cs" />
-    <Compile Include="System\XElementExtensions.cs" />
+    <Compile Include="General\StringExtensions.cs" />
+    <Compile Include="General\XElementExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controls\BaseEditorPart.cs" />
     <Compile Include="Controls\BaseEditorPartCollection.cs" />
