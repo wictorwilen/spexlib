@@ -70,6 +70,9 @@
     <Compile Include="General\XmlNodeExtensions.cs" />
     <Compile Include="SharePoint\Security\SPSiteSecurityExtensions.cs" />
     <Compile Include="SharePoint\Security\SPWebSecurityExtensions.cs" />
+    <Compile Include="SharePoint\SPContentTypeCollectionExtension.cs" />
+    <Compile Include="SharePoint\SPFieldCollectionExtension.cs" />
+    <Compile Include="SharePoint\SPListCollectionExtensions.cs" />
     <Compile Include="SharePoint\SPListExtensions.cs" />
     <Compile Include="SharePoint\SPListItemCollectionExtensions.cs" />
     <Compile Include="SharePoint\SPListItemExtension.cs" />
