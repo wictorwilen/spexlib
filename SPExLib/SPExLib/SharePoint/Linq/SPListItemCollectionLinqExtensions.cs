@@ -17,7 +17,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Microsoft.SharePoint;
 
 namespace SPExLib.SharePoint.Linq {
@@ -31,68 +30,27 @@ namespace SPExLib.SharePoint.Linq {
         /// <param name="source">The SPListItemCollection object</param>
         /// <param name="action">The action to perform on the item</param>
         public static void ForEach(this SPListItemCollection source, Action<SPListItem> action) {
-            if (source.Count == 0) {
-                return;
-            }
-            foreach (SPListItem item in source) {
-                action(item);
-            }
-        }
-        public static bool Any(this SPListItemCollection source) {
-            return source.Count != 0;
+            source.ForEach(action);
         }
 
         public static bool Any(this SPListItemCollection source, Func<SPListItem, bool> predicate) {
-            if (source.Count == 0) {
-                return false;
-            }
-            foreach (SPListItem item in source) {
-                if (predicate(item)) {
-                    return true;
-                }
-            }
-            return false;
+            return source.Any(predicate);
         }
-        public static bool All(this SPListItemCollection source, Func<SPListItem, bool> predicate) {
-            if (source.Count == 0) {
-                return false;
-            }
-            foreach (SPListItem item in source) {
-                if (!predicate(item)) {
-                    return false;
-                }
-            }
-            return true;
-        }
-        public static int Count(this SPListItemCollection source, Func<SPListItem, bool> predicate) {
-            if (source.Count == 0) {
-                return 0;
-            }
-            int count = 0;
-            foreach (SPListItem item in source) {
-                if (predicate(item)) {
-                    count++;
-                }
-            }
 
-            return count;
+        public static bool All(this SPListItemCollection source, Func<SPListItem, bool> predicate) {
+            return source.Cast<SPListItem>().All(predicate);
+        }
+
+        public static int Count(this SPListItemCollection source, Func<SPListItem, bool> predicate) {
+            return source.Cast<SPListItem>().Count(predicate);
         }
 
         public static IEnumerable<TResult> Select<TResult>(this SPListItemCollection source, Func<SPListItem, TResult> selector) {
-            foreach (SPListItem item in source) {
-                TResult result = selector(item);
-                yield return result;
-            }
+            return source.Cast<SPListItem>().Select(selector);
         }
 
         public static IEnumerable<SPListItem> Where(this SPListItemCollection source, Func<SPListItem, bool> predicate) {
-            foreach (SPListItem item in source) {
-                if (predicate(item)) {
-                    yield return item;
-                }
-
-            }
+            return source.Cast<SPListItem>().Where(predicate);
         }
-    
     }
 }

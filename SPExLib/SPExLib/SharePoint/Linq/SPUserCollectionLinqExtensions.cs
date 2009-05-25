@@ -25,11 +25,15 @@ namespace SPExLib.SharePoint.Linq {
     /// </summary>
     public static class SPUserCollectionLinqExtensions {
 
-        public static IEnumerable<TResult> Select<TResult>(this SPUserCollection source, Func<SPUser, TResult> selector) {
-            foreach (SPUser user in source) {
-                TResult result = selector(user);
-                yield return result;
-            }
+        // Do we need this if IEnumerable is extended?
+        public static void ForEach(this SPUserCollection source, Action<SPUser> action)
+        {
+            source.ForEach(action);
+        }
+
+        public static IEnumerable<TResult> Select<TResult>(this SPUserCollection source, Func<SPUser, TResult> selector)
+        {
+            return source.Cast<SPUser>().Select(selector);
         }
         
     }
