@@ -39,5 +39,17 @@ namespace SPExLib.SharePoint.Linq
         {
             return source.Cast<TSource>().Contains(value, comparer);
         }
+
+        public static IEnumerable<TSource> Where<TSource>(this SPBaseCollection source, Func<TSource, bool> predicate) {
+            return source.Cast<TSource>().Where(predicate);
+        }
+
+        public static TSource First<TSource>(this SPBaseCollection source) {
+            return source.Cast<TSource>().First<TSource>();
+        }
+
+        public static TSource First<TSource>(this SPBaseCollection source, Func<TSource, bool> predicate) {
+            return source.Cast<TSource>().First<TSource>(predicate);
+        }
     }
 }

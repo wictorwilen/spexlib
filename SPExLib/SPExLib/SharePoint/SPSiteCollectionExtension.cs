@@ -17,20 +17,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.SharePoint.Administration;
 using Microsoft.SharePoint;
+using SPExLib.SharePoint.Linq;
+using SPExLib.General;
 
-namespace SPExLib.SharePoint.Linq {
-    /// <summary>
-    /// Linq extensioins for SPUserCollection
-    /// </summary>
-    public static class SPUserCollectionLinqExtensions {
+namespace SPExLib.SharePoint {
+    public static class SPSiteCollectionExtension {
 
-       
-
-        public static IEnumerable<TResult> Select<TResult>(this SPUserCollection source, Func<SPUser, TResult> selector)
-        {
-            return source.Cast<SPUser>().Select(selector);
+        public static void ForEach(this SPSiteCollection source, Action<SPSite> action) {
+            source.AsSafeEnumerable().ForEach(action);
         }
-        
+    
     }
 }
