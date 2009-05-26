@@ -30,7 +30,9 @@ namespace SPExLib.SharePoint.Linq {
         /// <param name="source">The SPListItemCollection object</param>
         /// <param name="action">The action to perform on the item</param>
         public static void ForEach(this SPListItemCollection source, Action<SPListItem> action) {
-            source.ForEach(action);
+            foreach (SPListItem item in source) {
+                action(item);
+            }
         }
 
         public static bool Any(this SPListItemCollection source, Func<SPListItem, bool> predicate) {
