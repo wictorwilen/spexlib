@@ -24,16 +24,7 @@ namespace SPExLib.SharePoint.Linq {
     /// Linq extensions for SPListItem
     /// </summary>
     public static class SPListItemCollectionLinqExtensions {
-        /// <summary>
-        /// Performs the <paramref name="action"/> on each item in the list
-        /// </summary>
-        /// <param name="source">The SPListItemCollection object</param>
-        /// <param name="action">The action to perform on the item</param>
-        public static void ForEach(this SPListItemCollection source, Action<SPListItem> action) {
-            foreach (SPListItem item in source) {
-                action(item);
-            }
-        }
+        
 
         public static bool Any(this SPListItemCollection source, Func<SPListItem, bool> predicate) {
             return source.Any(predicate);

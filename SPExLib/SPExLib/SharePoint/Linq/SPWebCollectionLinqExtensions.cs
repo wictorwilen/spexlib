@@ -69,9 +69,6 @@ namespace SPExLib.SharePoint.Linq
             return source.AsSafeEnumerable().Select(selector);
         }
 
-        public static void ForEach(this SPWebCollection source, Action<SPWeb> action)
-        {
-            source.AsSafeEnumerable().ForEach(action);
-        }
+     
     }
 }

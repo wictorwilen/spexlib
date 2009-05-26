@@ -76,8 +76,10 @@
     <Compile Include="SharePoint\SPListExtensions.cs" />
     <Compile Include="SharePoint\SPListItemCollectionExtensions.cs" />
     <Compile Include="SharePoint\SPListItemExtension.cs" />
+    <Compile Include="SharePoint\SPSiteCollectionExtension.cs" />
     <Compile Include="SharePoint\SPUserCollectionExtensions.cs" />
     <Compile Include="SharePoint\SPUserExtension.cs" />
+    <Compile Include="SharePoint\SPViewCollectionExtension.cs" />
     <Compile Include="SharePoint\SPViewExtensions.cs" />
     <Compile Include="SharePoint\SPWebCollectionExtensions.cs" />
     <Compile Include="SharePoint\SPWebExtensions.cs" />

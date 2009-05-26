@@ -38,6 +38,14 @@ namespace SPExLib.SharePoint {
             return source.Any<SPList>(list => string.Compare(list.Title, name, StringComparison.CurrentCultureIgnoreCase) == 0);
         }
 
+        /// <summary>
+        /// Performs the <paramref name="action"/> on each item in the list
+        /// </summary>
+        /// <param name="source">The SPList object</param>
+        /// <param name="action">The action to perform on the item</param>
+        public static void ForEach(this SPList source, Action<SPListItem> action) {
+            source.Items.ForEach(action);
+        }
 
        
     }

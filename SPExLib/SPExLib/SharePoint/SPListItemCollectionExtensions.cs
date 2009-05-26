@@ -28,6 +28,17 @@ namespace SPExLib.SharePoint {
             return (from SPListItem item in input where item[field] == value select item).ToList();
         }
 
+        /// <summary>
+        /// Performs the <paramref name="action"/> on each item in the list
+        /// </summary>
+        /// <param name="source">The SPListItemCollection object</param>
+        /// <param name="action">The action to perform on the item</param>
+        public static void ForEach(this SPListItemCollection source, Action<SPListItem> action) {
+            foreach (SPListItem item in source) {
+                action(item);
+            }
+        }
+
         
         
     }

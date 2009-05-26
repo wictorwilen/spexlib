@@ -20,6 +20,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.SharePoint;
 using SPExLib.SharePoint.Linq;
+using SPExLib.General;
 
 namespace SPExLib.SharePoint {
     /// <summary>
@@ -30,7 +31,9 @@ namespace SPExLib.SharePoint {
         public static bool Contains(this SPWebCollection source, string name) {
             return source.AsSafeEnumerable().Any<SPWeb>(web => string.Compare(web.Name, name, StringComparison.CurrentCultureIgnoreCase) == 0);
         }
-
+        public static void ForEach(this SPWebCollection source, Action<SPWeb> action) {
+            source.AsSafeEnumerable().ForEach(action);
+        }
     
     }
 }
