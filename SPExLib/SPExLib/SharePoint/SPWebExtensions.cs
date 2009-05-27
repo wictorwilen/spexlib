@@ -17,7 +17,7 @@
 using System;
 using System.Linq;
 using Microsoft.SharePoint;
-using SPExLib.SharePoint.Linq;
+using SPExLib.SharePoint.Linq.Base;
 
 namespace SPExLib.SharePoint {
     public static class SPWebExtensions {

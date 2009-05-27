@@ -13,7 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.SharePoint;
 
-namespace SPExLib.SharePoint.Linq
+namespace SPExLib.SharePoint.Linq.Base
 {
     /// <summary>
     /// Provides LINQ extension methods for <see cref="SPBaseCollection"/> objects.
