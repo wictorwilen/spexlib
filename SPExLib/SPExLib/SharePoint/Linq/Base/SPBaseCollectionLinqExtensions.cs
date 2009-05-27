@@ -12,14 +12,35 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.SharePoint;
+using Microsoft.SharePoint.Administration;
 
-namespace SPExLib.SharePoint.Linq
+namespace SPExLib.SharePoint.Linq.Base
 {
     /// <summary>
     /// Provides LINQ extension methods for <see cref="SPBaseCollection"/> objects.
     /// </summary>
     public static partial class SPBaseCollectionLinqExtensions
     {
+        #region Dispose-safe Cast
+
+        public static IEnumerable<TSource> Cast<TSource>(this SPBaseCollection source)
+        {
+            return source.Cast<TSource>(false);
+        }
+        public static IEnumerable<TSource> Cast<TSource>(this SPBaseCollection source, bool overrideDisposeGuard)
+        {
+            if (!overrideDisposeGuard && IsDisposableCollection(source))
+                throw new NotSupportedException("Invalid cast.");
+            return Enumerable.Cast<TSource>(source);
+        }
+
+        private static bool IsDisposableCollection(SPBaseCollection source)
+        {
+            return source is SPWebCollection || source is SPSiteCollection;
+        }
+
+        #endregion
+
         public static bool Any(this SPBaseCollection source)
         {
             return source.Count > 0;
