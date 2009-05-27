@@ -45,6 +45,25 @@ namespace SPExLib.SharePoint {
             source.Items.ForEach(action);
         }
 
+        /// <summary>
+        ///  Returns a collection of items from the list based on the specified CAML query.
+        /// </summary>
+        /// <param name="source">The SPList object</param>
+        /// <param name="whereQuery">A CAML Where statement</param>
+        /// <returns>A <see cref="Microsoft.SharePoint.SPListItemCollection"/> object that represents the items.</returns>
+        public static SPListItemCollection GetItems(this SPList source, string whereQuery) {
+            return source.GetItems(new SPQuery { Query = whereQuery });
+        }
+        /// <summary>
+        ///  Returns a collection of items from the list and view based on the specified CAML query.
+        /// </summary>
+        /// <param name="source">The SPList object</param>
+        /// <param name="whereQuery">A CAML Where statement</param>
+        /// <param name="viewName">The name of the view to query</param>
+        /// <returns>A <see cref="Microsoft.SharePoint.SPListItemCollection"/> object that represents the items.</returns>
+        public static SPListItemCollection GetItems(this SPList source, string whereQuery, string viewName) {
+            return source.GetItems(new SPQuery { Query = whereQuery }, viewName);
+        }
        
     }
 }
