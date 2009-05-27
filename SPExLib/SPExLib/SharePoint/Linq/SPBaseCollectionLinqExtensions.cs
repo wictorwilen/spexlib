@@ -40,16 +40,37 @@ namespace SPExLib.SharePoint.Linq
             return source.Cast<TSource>().Contains(value, comparer);
         }
 
-        public static IEnumerable<TSource> Where<TSource>(this SPBaseCollection source, Func<TSource, bool> predicate) {
-            return source.Cast<TSource>().Where(predicate);
-        }
-
         public static TSource First<TSource>(this SPBaseCollection source) {
             return source.Cast<TSource>().First<TSource>();
         }
 
         public static TSource First<TSource>(this SPBaseCollection source, Func<TSource, bool> predicate) {
             return source.Cast<TSource>().First<TSource>(predicate);
+        }  
+
+        public static IEnumerable<TResult> SelectMany<TSource, TResult>(this SPBaseCollection source, Func<TSource, IEnumerable<TResult>> selector)
+        {
+            return source.Cast<TSource>().SelectMany(selector);
+        }
+
+        public static IEnumerable<TResult> SelectMany<TSource, TResult>(this SPBaseCollection source, Func<TSource, int, IEnumerable<TResult>> selector)
+        {
+            return source.Cast<TSource>().SelectMany(selector);
+        }
+
+        public static IEnumerable<TResult> SelectMany<TSource, TCollection, TResult>(this SPBaseCollection source, Func<TSource, IEnumerable<TCollection>> collectionSelector, Func<TSource, TCollection, TResult> resultSelector)
+        {
+            return source.Cast<TSource>().SelectMany(collectionSelector, resultSelector);
+        }
+
+        public static IEnumerable<TResult> SelectMany<TSource, TCollection, TResult>(this SPBaseCollection source, Func<TSource, int, IEnumerable<TCollection>> collectionSelector, Func<TSource, TCollection, TResult> resultSelector)
+        {
+            return source.Cast<TSource>().SelectMany(collectionSelector, resultSelector);
+        }
+
+        public static IEnumerable<TSource> Where<TSource>(this SPBaseCollection source, Func<TSource, bool> predicate)
+        {
+            return source.Cast<TSource>().Where(predicate);
         }
     }
 }
