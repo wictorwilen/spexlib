@@ -248,11 +248,11 @@ namespace SPExLib.SharePoint.Linq
             return outer.AsSafeEnumerable().GroupJoin(inner, outerKeySelector, innerKeySelector, resultSelector, comparer);
         }
 
-        public static IEnumerable<SPWeb> Intersect<SPWeb>(this SPWebCollection first, IEnumerable<SPWeb> second)
+        public static IEnumerable<SPWeb> Intersect(this SPWebCollection first, IEnumerable<SPWeb> second)
         {
             throw new NotSupportedException();
         }
-        public static IEnumerable<SPWeb> Intersect<SPWeb>(this SPWebCollection first, IEnumerable<SPWeb> second, IEqualityComparer<SPWeb> comparer)
+        public static IEnumerable<SPWeb> Intersect(this SPWebCollection first, IEnumerable<SPWeb> second, IEqualityComparer<SPWeb> comparer)
         {
             throw new NotSupportedException();
         }
