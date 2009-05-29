@@ -27,10 +27,6 @@ namespace SPExLib.SharePoint {
             return list.Views.Any<SPView>(view => string.Compare(view.Title, title, StringComparison.CurrentCultureIgnoreCase) == 0);
         }
 
-        public static bool Contains(this SPWebCollection source, string name) {
-            return source.Any<SPList>(list => string.Compare(list.Title, name, StringComparison.CurrentCultureIgnoreCase) == 0);
-        }
-
         /// <summary>
         /// Performs the <paramref name="action"/> on each item in the list
         /// </summary>
