@@ -15,14 +15,14 @@
  */
 using System;
 using Microsoft.SharePoint;
-using System.Linq;
 
 namespace SPExLib.SharePoint
 {
     public static class SPUserExtension {
         public static string GetFormsLoginName(this SPUser spUser)  {
-            return spUser.LoginName.Contains(':') ? spUser.LoginName.Split(':')[1] : spUser.LoginName;
-
+            string loginName = spUser.LoginName;
+            int colonIndex = loginName.IndexOf(':');
+            return colonIndex < 0 ? loginName : loginName.Substring(colonIndex);
         }
     }
 }

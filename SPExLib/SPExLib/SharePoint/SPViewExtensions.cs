@@ -14,7 +14,6 @@
  * 
  */
 using System;
-using System.Linq;
 using Microsoft.SharePoint;
 
 namespace SPExLib.SharePoint {
