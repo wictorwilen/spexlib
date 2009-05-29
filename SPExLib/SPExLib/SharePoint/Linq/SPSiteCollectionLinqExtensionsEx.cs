@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.Administration;
+using SPExLib.SharePoint.Linq.Base;
 
 namespace SPExLib.SharePoint.Linq
 {
