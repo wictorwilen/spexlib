@@ -45,11 +45,11 @@ namespace SPExLib.SharePoint.Linq
             throw new NotSupportedException();
         }
 
-        public static IEnumerable<SPWeb> Except(SPWebCollection first, SPWebCollection second)
+        public static IEnumerable<SPWeb> Except(this SPWebCollection first, SPWebCollection second)
         {
             throw new NotSupportedException();
         }
-        public static IEnumerable<SPWeb> Except(SPWebCollection first, SPWebCollection second, IEqualityComparer<SPWeb> comparer)
+        public static IEnumerable<SPWeb> Except(this SPWebCollection first, SPWebCollection second, IEqualityComparer<SPWeb> comparer)
         {
             throw new NotSupportedException();
         }
@@ -111,11 +111,11 @@ namespace SPExLib.SharePoint.Linq
             throw new NotSupportedException();
         }
 
-        public static IEnumerable<SPWeb> Intersect(SPWebCollection first, SPWebCollection second)
+        public static IEnumerable<SPWeb> Intersect(this SPWebCollection first, SPWebCollection second)
         {
             throw new NotSupportedException();
         }
-        public static IEnumerable<SPWeb> Intersect(SPWebCollection first, SPWebCollection second, IEqualityComparer<SPWeb> comparer)
+        public static IEnumerable<SPWeb> Intersect(this SPWebCollection first, SPWebCollection second, IEqualityComparer<SPWeb> comparer)
         {
             throw new NotSupportedException();
         }
@@ -168,20 +168,20 @@ namespace SPExLib.SharePoint.Linq
 
         #region SequenceEqual
 
-        public static IEnumerable<SPWeb> SequenceEqual(this IEnumerable<SPWeb> first, SPWebCollection second)
+        public static bool SequenceEqual(this IEnumerable<SPWeb> first, SPWebCollection second)
         {
             throw new NotSupportedException();
         }
-        public static IEnumerable<SPWeb> SequenceEqual(this IEnumerable<SPWeb> first, SPWebCollection second, IEqualityComparer<SPWeb> comparer)
+        public static bool SequenceEqual(this IEnumerable<SPWeb> first, SPWebCollection second, IEqualityComparer<SPWeb> comparer)
         {
             throw new NotSupportedException();
         }
 
-        public static IEnumerable<SPWeb> SequenceEqual(SPWebCollection first, SPWebCollection second)
+        public static bool SequenceEqual(this SPWebCollection first, SPWebCollection second)
         {
             throw new NotSupportedException();
         }
-        public static IEnumerable<SPWeb> SequenceEqual(SPWebCollection first, SPWebCollection second, IEqualityComparer<SPWeb> comparer)
+        public static bool SequenceEqual(this SPWebCollection first, SPWebCollection second, IEqualityComparer<SPWeb> comparer)
         {
             throw new NotSupportedException();
         }
@@ -199,11 +199,11 @@ namespace SPExLib.SharePoint.Linq
             throw new NotSupportedException();
         }
 
-        public static IEnumerable<SPWeb> Union(SPWebCollection first, SPWebCollection second)
+        public static IEnumerable<SPWeb> Union(this SPWebCollection first, SPWebCollection second)
         {
             throw new NotSupportedException();
         }
-        public static IEnumerable<SPWeb> Union(SPWebCollection first, SPWebCollection second, IEqualityComparer<SPWeb> comparer)
+        public static IEnumerable<SPWeb> Union(this SPWebCollection first, SPWebCollection second, IEqualityComparer<SPWeb> comparer)
         {
             throw new NotSupportedException();
         }

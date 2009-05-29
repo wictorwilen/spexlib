@@ -45,11 +45,11 @@ namespace SPExLib.SharePoint.Linq
             throw new NotSupportedException();
         }
 
-        public static IEnumerable<SPSite> Except(SPSiteCollection first, SPSiteCollection second)
+        public static IEnumerable<SPSite> Except(this SPSiteCollection first, SPSiteCollection second)
         {
             throw new NotSupportedException();
         }
-        public static IEnumerable<SPSite> Except(SPSiteCollection first, SPSiteCollection second, IEqualityComparer<SPSite> comparer)
+        public static IEnumerable<SPSite> Except(this SPSiteCollection first, SPSiteCollection second, IEqualityComparer<SPSite> comparer)
         {
             throw new NotSupportedException();
         }
@@ -111,11 +111,11 @@ namespace SPExLib.SharePoint.Linq
             throw new NotSupportedException();
         }
 
-        public static IEnumerable<SPSite> Intersect(SPSiteCollection first, SPSiteCollection second)
+        public static IEnumerable<SPSite> Intersect(this SPSiteCollection first, SPSiteCollection second)
         {
             throw new NotSupportedException();
         }
-        public static IEnumerable<SPSite> Intersect(SPSiteCollection first, SPSiteCollection second, IEqualityComparer<SPSite> comparer)
+        public static IEnumerable<SPSite> Intersect(this SPSiteCollection first, SPSiteCollection second, IEqualityComparer<SPSite> comparer)
         {
             throw new NotSupportedException();
         }
@@ -168,20 +168,20 @@ namespace SPExLib.SharePoint.Linq
 
         #region SequenceEqual
 
-        public static IEnumerable<SPSite> SequenceEqual(this IEnumerable<SPSite> first, SPSiteCollection second)
+        public static bool SequenceEqual(this IEnumerable<SPSite> first, SPSiteCollection second)
         {
             throw new NotSupportedException();
         }
-        public static IEnumerable<SPSite> SequenceEqual(this IEnumerable<SPSite> first, SPSiteCollection second, IEqualityComparer<SPSite> comparer)
+        public static bool SequenceEqual(this IEnumerable<SPSite> first, SPSiteCollection second, IEqualityComparer<SPSite> comparer)
         {
             throw new NotSupportedException();
         }
 
-        public static IEnumerable<SPSite> SequenceEqual(SPSiteCollection first, SPSiteCollection second)
+        public static bool SequenceEqual(this SPSiteCollection first, SPSiteCollection second)
         {
             throw new NotSupportedException();
         }
-        public static IEnumerable<SPSite> SequenceEqual(SPSiteCollection first, SPSiteCollection second, IEqualityComparer<SPSite> comparer)
+        public static bool SequenceEqual(this SPSiteCollection first, SPSiteCollection second, IEqualityComparer<SPSite> comparer)
         {
             throw new NotSupportedException();
         }
@@ -199,11 +199,11 @@ namespace SPExLib.SharePoint.Linq
             throw new NotSupportedException();
         }
 
-        public static IEnumerable<SPSite> Union(SPSiteCollection first, SPSiteCollection second)
+        public static IEnumerable<SPSite> Union(this SPSiteCollection first, SPSiteCollection second)
         {
             throw new NotSupportedException();
         }
-        public static IEnumerable<SPSite> Union(SPSiteCollection first, SPSiteCollection second, IEqualityComparer<SPSite> comparer)
+        public static IEnumerable<SPSite> Union(this SPSiteCollection first, SPSiteCollection second, IEqualityComparer<SPSite> comparer)
         {
             throw new NotSupportedException();
         }
