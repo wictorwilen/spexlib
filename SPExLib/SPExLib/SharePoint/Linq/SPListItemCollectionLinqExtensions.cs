@@ -4,11 +4,6 @@
  * 
  * ------------------------------------------
  * 
- * by Wictor Wilén
- * http://www.wictorwilen.se
- * 
- * ------------------------------------------
- * 
  * Licensed under the Microsoft Public License (Ms-PL) 
  * http://www.opensource.org/licenses/ms-pl.html
  * 
@@ -16,7 +11,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Microsoft.SharePoint;
 using SPExLib.SharePoint.Linq.Base;
 
@@ -25,26 +19,24 @@ namespace SPExLib.SharePoint.Linq {
     /// Linq extensions for SPListItem
     /// </summary>
     public static class SPListItemCollectionLinqExtensions {
-        
-
         public static bool Any(this SPListItemCollection source, Func<SPListItem, bool> predicate) {
-            return source.Any(predicate);
+            return source.Any<SPListItem>(predicate);
         }
 
         public static bool All(this SPListItemCollection source, Func<SPListItem, bool> predicate) {
-            return source.Cast<SPListItem>().All(predicate);
+            return source.All<SPListItem>(predicate);
         }
 
         public static int Count(this SPListItemCollection source, Func<SPListItem, bool> predicate) {
-            return source.Cast<SPListItem>().Count(predicate);
+            return source.Count<SPListItem>(predicate);
         }
 
         public static IEnumerable<TResult> Select<TResult>(this SPListItemCollection source, Func<SPListItem, TResult> selector) {
-            return source.Cast<SPListItem>().Select(selector);
+            return source.Select<SPListItem, TResult>(selector);
         }
 
         public static IEnumerable<SPListItem> Where(this SPListItemCollection source, Func<SPListItem, bool> predicate) {
-            return source.Cast<SPListItem>().Where(predicate);
+            return source.Where<SPListItem>(predicate);
         }
     }
 }

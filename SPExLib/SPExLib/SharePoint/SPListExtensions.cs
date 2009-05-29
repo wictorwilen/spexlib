@@ -4,11 +4,6 @@
  * 
  * ------------------------------------------
  * 
- * by Wictor Wilén
- * http://www.wictorwilen.se
- * 
- * ------------------------------------------
- * 
  * Licensed under the Microsoft Public License (Ms-PL) 
  * http://www.opensource.org/licenses/ms-pl.html
  * 
@@ -41,9 +36,11 @@ namespace SPExLib.SharePoint {
         /// </summary>
         /// <param name="source">The SPList object</param>
         /// <param name="action">The action to perform on the item</param>
-        public static void ForEach(this SPList source, Action<SPListItem> action) {
-            source.Items.ForEach(action);
-        }
+        // dahlbyk: I would prefer not to encourage/support the use of the Items property
+        // Users should get in the habit of using SPQuery with View or ViewFields
+        //public static void ForEach(this SPList source, Action<SPListItem> action) {
+        //    source.Items.ForEach(action);
+        //}
 
         /// <summary>
         ///  Returns a collection of items from the list based on the specified CAML query.
@@ -64,6 +61,18 @@ namespace SPExLib.SharePoint {
         public static SPListItemCollection GetItems(this SPList source, string whereQuery, string viewName) {
             return source.GetItems(new SPQuery { Query = whereQuery }, viewName);
         }
-       
+
+        /// <summary>
+        /// Returns a Boolean value that indicates whether the list name matches the given value.
+        /// </summary>
+        /// <param name="list">The list.</param>
+        /// <param name="name">The name.</param>
+        /// <returns><c>true</c> if the name matches; otherwise, <c>false</c>.</returns>
+        /// <remarks>Uses the same comparison criteria as SPListCollection.Item[string strListName].</remarks>
+        public static bool NameEquals(this SPList list, string name)
+        {
+            // Microsoft.SharePoint.Utilities.SPUtilityInternal.StsCompareStrings
+            return string.Equals(list.Title, name, StringComparison.InvariantCultureIgnoreCase);
+        }
     }
 }

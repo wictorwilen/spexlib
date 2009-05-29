@@ -14,8 +14,9 @@ using SPExLib.SharePoint.Linq.Base;
 
 namespace SPExLib.SharePoint {
     public static class SPListCollectionExtensions {
-        public static bool Contains(this SPListCollection source, string title) {
-            return source.Any<SPList>(list => string.Compare(list.Title, title, StringComparison.CurrentCultureIgnoreCase) == 0);
+        public static bool Contains(this SPListCollection source, string name)
+        {
+            return source.Any<SPList>(list => list.NameEquals(name));
         }
     }
 }
