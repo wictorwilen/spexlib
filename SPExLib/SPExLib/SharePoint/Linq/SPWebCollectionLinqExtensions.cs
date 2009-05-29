@@ -62,7 +62,7 @@ namespace SPExLib.SharePoint.Linq
 
         #endregion
 
-        public static TSource Aggregate<TSource>(this IEnumerable<TSource> source, Func<TSource, TSource, TSource> func)
+        public static TSource Aggregate<TSource>(this SPWebCollection source, Func<TSource, TSource, TSource> func)
         {
             throw new NotSupportedException();
         }
