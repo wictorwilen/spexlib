@@ -36,7 +36,7 @@ namespace SPExLib.SharePoint.Linq.Base
 
         private static bool IsDisposableCollection(SPBaseCollection source)
         {
-            return source is SPBaseCollection || source is SPSiteCollection;
+            return source is SPWebCollection || source is SPSiteCollection;
         }
 
         #endregion
