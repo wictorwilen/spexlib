@@ -10,6 +10,7 @@
  */
 using System;
 using Microsoft.SharePoint;
+using SPExLib.General;
 using SPExLib.SharePoint.Linq.Base;
 
 namespace SPExLib.SharePoint {
@@ -83,6 +84,16 @@ namespace SPExLib.SharePoint {
         {
             // Microsoft.SharePoint.Utilities.SPUtilityInternal.StsCompareStrings
             return string.Equals(list.Title, name, StringComparison.InvariantCultureIgnoreCase);
+        }
+
+        /// <summary>
+        /// Gets the Url for the list
+        /// </summary>
+        /// <param name="list">The SPList object</param>
+        /// <returns>A list to the Url.</returns>
+        /// <remarks>For more information see: http://www.sharepointdevwiki.com/display/public/Accessing+the+List+Url+property</remarks>
+        public static string GetUrl(this SPList list) {
+            return "{0}/{1}".FormatWith(list.ParentWeb.Url, list.RootFolder.Url);
         }
     }
 }
