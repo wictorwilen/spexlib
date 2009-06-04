@@ -17,6 +17,20 @@ namespace SPExLib.SharePoint {
     /// Extensions for SPList
     /// </summary>
     public static class SPListExtensions {
+        private static readonly string EmptyCamlQuery = "0";
+
+        /// <summary>
+        /// Creates an item but requires the Microsoft.SharePoint.SPListItem.Update() method to actually add the item to the list.
+        /// </summary>
+        /// <param name="list">The list.</param>
+        /// <returns>An Microsoft.SharePoint.SPListItem object that represents the new item.</returns>
+        /// <remarks>Optimized to add the item from an empty SPListItemCollection. For more information, see http://mo.notono.us/2009/03/beware-of-splistitemsadd.html</remarks>
+        public static SPListItem AddItem(this SPList list)
+        {
+            return list.GetItems(new SPQuery { Query = EmptyCamlQuery })
+                       .Add();
+        }
+
         /// <summary>
         /// Checks if the specified view exists
         /// </summary>
