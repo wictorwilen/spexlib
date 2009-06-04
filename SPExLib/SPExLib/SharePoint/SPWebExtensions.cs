@@ -22,9 +22,20 @@ namespace SPExLib.SharePoint {
             return web.AssociatedGroups.Any(group => group.NameEquals(name));
         }
 
+        public static bool HasGroupAssociation(this SPWeb web, SPGroup group)
+        {
+            if (group == null)
+                throw new ArgumentNullException("group");
+
+            return web.HasGroupAssociation(group.Name);
+        }
+
         public static void EnsureGroupAssociation(this SPWeb web, SPGroup group)
         {
-            if (web.HasGroupAssociation(group.Name))
+            if (group == null)
+                throw new ArgumentNullException("group");
+
+            if (web.HasGroupAssociation(group))
                 web.AssociatedGroups.Add(group);
         }
 
