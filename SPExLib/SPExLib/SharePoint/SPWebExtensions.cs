@@ -12,6 +12,7 @@
 using System;
 using System.Linq;
 using Microsoft.SharePoint;
+using SPExLib.SharePoint.Linq;
 using SPExLib.SharePoint.Linq.Base;
 using SPExLib.SharePoint.Tools;
 
@@ -69,6 +70,23 @@ namespace SPExLib.SharePoint {
 
         public static bool ListExists(this SPWeb web, string name) {
             return web.Lists.Contains(name);
+        }
+
+        /// <summary>
+        /// Retrieves the SPListTemplate with the specified internal name
+        /// </summary>
+        /// <param name="web"></param>
+        /// <param name="internalName">Internal name of the SPListTemplate</param>
+        /// <returns>An SPListTemplate object</returns>
+        /// <exception cref="System.ArgumentOutOfRangeException">If the SPListTemplate is not found</exception>
+        /// <remarks>This method is useful when you have to retrieve list templates in language independant applications</remarks>
+        public static SPListTemplate GetListTemplateByInternalName(this SPWeb web, string internalName) {
+            foreach (SPListTemplate template in web.ListTemplates) {
+                if (string.Equals(template.InternalName, internalName, StringComparison.InvariantCultureIgnoreCase)) {
+                    return template;
+                }
+            }
+            throw new ArgumentOutOfRangeException("internalName", internalName, "The SPListTemplate with that internal name could not be found");
         }
     }
 }
