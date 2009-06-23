@@ -62,6 +62,7 @@
     <Compile Include="General\StringExtensions.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="General\ControlExtensions.cs" />
     <Compile Include="SharePoint\Linq\SPSiteCollectionLinqExtensionsEx.cs" />
     <Compile Include="SharePoint\Linq\SPWebCollectionLinqExtensionsEx.cs" />
     <Compile Include="SharePoint\Linq\Base\SPBaseCollectionLinqExtensionsEx.cs" />
