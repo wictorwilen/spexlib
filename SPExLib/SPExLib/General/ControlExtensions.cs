@@ -27,7 +27,7 @@ namespace SPExLib.General
         /// <param name="root">The control in which to search.</param>
         /// <param name="id">The identifier for the control to be found.</param>
         /// <returns>The specified control, or null if the specified control does not exist.</returns>
-        public static T FindDescendentControl<T>(this Control root, string id) where T : Control
+        public static T FindDescendantControl<T>(this Control root, string id) where T : Control
         {
             if (id == null)
                 throw new ArgumentNullException("id");
@@ -35,8 +35,8 @@ namespace SPExLib.General
             if (root == null)
                 return null;
 
-            // Build an enumeration of the current control and its descendents
-            var controls = root.AsSingleton().Concat(root.GetDescendentControls());
+            // Build an enumeration of the current control and its descendants
+            var controls = root.AsSingleton().Concat(root.GetDescendantControls());
 
             // Filter controls to find the requested ID
             var foundControls = from c in controls
@@ -49,12 +49,12 @@ namespace SPExLib.General
         }
 
         /// <summary>
-        /// Returns an enumeration of all descendents of the current control
+        /// Returns an enumeration of all descendants of the current control
         /// </summary>
         /// <param name="root">The control.</param>
         /// <returns>An enumeration of <c>root</c>'s the child controls</returns>
         /// <remarks>Uses a breadth-first non-recursive traversal algorithm</remarks>
-        public static IEnumerable<Control> GetDescendentControls(this Control root)
+        public static IEnumerable<Control> GetDescendantControls(this Control root)
         {
             var q = new Queue<Control>();
 
