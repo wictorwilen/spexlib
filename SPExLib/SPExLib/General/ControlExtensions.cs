@@ -26,7 +26,7 @@ namespace SPExLib.General
         /// <param name="root">The control in which to search.</param>
         /// <param name="id">The identifier for the control to be found.</param>
         /// <returns>The specified control, or null if the specified control does not exist.</returns>
-        public static T FindControl<T>(this Control root, string id) where T : Control
+        public static T FindDescendentControl<T>(this Control root, string id) where T : Control
         {
             if (root == null)
                 return null;
