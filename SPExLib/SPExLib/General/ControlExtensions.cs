@@ -8,6 +8,7 @@
  * http://www.opensource.org/licenses/ms-pl.html
  * 
  */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.UI;
@@ -28,6 +29,9 @@ namespace SPExLib.General
         /// <returns>The specified control, or null if the specified control does not exist.</returns>
         public static T FindDescendentControl<T>(this Control root, string id) where T : Control
         {
+            if (id == null)
+                throw new ArgumentNullException("id");
+
             if (root == null)
                 return null;
 
@@ -38,10 +42,10 @@ namespace SPExLib.General
             var foundControls = from c in controls
                                 let found = c.FindControl(id)
                                 where found != null
-                                select found as T;
+                                select found;
 
-            // Using First instead of Single to skip enumeration of remaining controls
-            return foundControls.FirstOrDefault();
+            // Use First instead of Single to skip enumeration of remaining controls
+            return foundControls.FirstOrDefault() as T;
         }
 
         /// <summary>
